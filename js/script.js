@@ -2,6 +2,10 @@ function add(a, b){
     return a + b;
 }
 
-function subtract(leftNumber, rightNumber){
-    return leftNumber - rightNumber;
+function subtract(a, b){
+    return a - b;
+}
+
+function multiply(a, b){
+    return a * b;
 }
