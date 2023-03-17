@@ -4,3 +4,7 @@ body{
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.main{
+    height: 95vh;
+}
