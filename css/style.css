@@ -27,3 +27,8 @@ body{
     flex-direction: column;
     align-items: flex-end;
 }
+
+.lastScreen{
+    font-size: 2em;
+    color: #ffffff;
+}
