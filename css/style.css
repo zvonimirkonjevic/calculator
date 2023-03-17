@@ -21,3 +21,9 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
