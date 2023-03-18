@@ -37,4 +37,5 @@ body{
 .currentScreen{
     font-size: 4em;
     color: #ffffff;
+    min-height: 74px;
 }
