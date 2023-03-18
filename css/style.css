@@ -39,3 +39,7 @@ body{
     color: #ffffff;
     min-height: 74px;
 }
+
+.footer{
+    height: 5vh;
+}
