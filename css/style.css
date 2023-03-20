@@ -40,6 +40,11 @@ body{
     min-height: 74px;
 }
 
+.button-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .footer{
     height: 5vh;
     display: flex;
