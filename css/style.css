@@ -20,13 +20,14 @@ body{
     border-radius: 40px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .screen{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-top: 46px;
 }
 
 .lastScreen{
