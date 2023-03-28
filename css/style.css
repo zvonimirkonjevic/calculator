@@ -60,6 +60,11 @@ body{
     font-size: 1.75em;
 }
 
+#data-operation{
+    background-color: #ff9f19;
+    color: #ffffff;
+}
+
 button:nth-child(17){
     grid-column: 1 / 3;
 }
