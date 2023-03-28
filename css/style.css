@@ -66,3 +66,7 @@ a{
     color: black;
     text-decoration: none;
 }
+
+button:nth-child(17){
+    grid-column: 1 / 3;
+}
