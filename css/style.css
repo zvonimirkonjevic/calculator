@@ -65,6 +65,11 @@ body{
     color: #ffffff;
 }
 
+#data-number{
+    background-color: #4b4b4b;
+    color: white;
+}
+
 button:nth-child(17){
     grid-column: 1 / 3;
 }
