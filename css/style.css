@@ -51,12 +51,13 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 400px;
-    gap: 10px;
+    gap: 15px;
 }
 
 .btn{
     border-radius: 40px;
     border: none;
+    font-size: 1.75em;
 }
 
 button:nth-child(17){
