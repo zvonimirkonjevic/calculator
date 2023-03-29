@@ -82,6 +82,12 @@ button:nth-child(3){
     background-color: #b1b0b0;
 }
 
+#data-operation:hover,
+button:nth-child(19):hover{
+    background-color: #ffffff;
+    color: #ff9f19;
+}
+
 .footer{
     height: 5vh;
     display: flex;
