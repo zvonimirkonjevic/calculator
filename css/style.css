@@ -60,12 +60,14 @@ body{
     font-size: 1.75em;
 }
 
-#data-operation{
+#data-operation,
+button:nth-child(19){
     background-color: #ff9f19;
     color: #ffffff;
 }
 
-#data-number{
+#data-number,
+button:nth-child(18){
     background-color: #4b4b4b;
     color: white;
 }
