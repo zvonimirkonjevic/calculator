@@ -2,6 +2,8 @@ let operator = "";
 let leftNumber = "";
 let rightNumber = "";
 
+let numberButtons = document.querySelectorAll('#data-number');
+
 function add(a, b){
     return a + b;
 }
