@@ -32,3 +32,8 @@ function operate(leftOperand, rightOperand, operator){
     if(operator === '÷'){ return divide(leftOperand, rightOperand);}
     if(operator === '×'){ return multiply(leftOperand, rightOperand);}
 }
+
+function handleNumbers(digit){
+    if(rightOperand.length <= 9){ leftOperand += digit;}
+    currentOperationScreen.textContent = leftOperand;
+}
