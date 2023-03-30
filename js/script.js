@@ -1,6 +1,6 @@
 let operator = "";
-let leftNumber = "";
-let rightNumber = "";
+let leftOperand = "";
+let rightOperand = "";
 
 let numberButtons = document.querySelectorAll('#data-number');
 
@@ -22,9 +22,9 @@ function divide(a, b){
     return a / b;
 }
 
-function operate(leftNumber, rightNumber, operator){
-    if(operator === '+'){ return add(leftNumber, rightNumber);}
-    if(operator === '-'){ return subtract(leftNumber, rightNumber);}
-    if(operator === '÷'){ return divide(leftNumber, rightNumber);}
-    if(operator === 'x'){ return multiply(leftNumber, rightNumber);}
+function operate(leftOperand, rightOperand, operator){
+    if(operator === '+'){ return add(leftOperand, rightOperand);}
+    if(operator === '-'){ return subtract(leftOperand, rightOperand);}
+    if(operator === '÷'){ return divide(leftOperand, rightOperand);}
+    if(operator === 'x'){ return multiply(leftOperand, rightOperand);}
 }
