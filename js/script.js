@@ -6,6 +6,8 @@ let numberButtons = document.querySelectorAll('#data-number');
 
 let operationButtons = document.querySelectorAll('#data-operation');
 
+let pastOperationScreen = document.querySelector('#pastOperationScreen');
+
 function add(a, b){
     return a + b;
 }
@@ -26,5 +28,5 @@ function operate(leftOperand, rightOperand, operator){
     if(operator === '+'){ return add(leftOperand, rightOperand);}
     if(operator === '-'){ return subtract(leftOperand, rightOperand);}
     if(operator === '÷'){ return divide(leftOperand, rightOperand);}
-    if(operator === 'x'){ return multiply(leftOperand, rightOperand);}
+    if(operator === '×'){ return multiply(leftOperand, rightOperand);}
 }
