@@ -4,6 +4,8 @@ let rightNumber = "";
 
 let numberButtons = document.querySelectorAll('#data-number');
 
+let operationButtons = document.querySelectorAll('#data-operation');
+
 function add(a, b){
     return a + b;
 }
