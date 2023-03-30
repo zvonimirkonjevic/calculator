@@ -8,6 +8,8 @@ let operationButtons = document.querySelectorAll('#data-operation');
 
 let pastOperationScreen = document.querySelector('#pastOperationScreen');
 
+let currentOperationScreen = document.querySelector('#currentOpreationScreen');
+
 function add(a, b){
     return a + b;
 }
