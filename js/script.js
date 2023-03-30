@@ -37,3 +37,9 @@ function handleNumber(digit){
     if(rightOperand.length <= 7){ rightOperand += digit;}
     currentOperationScreen.textContent = rightOperand;
 }
+
+numberButtons.forEach((button, index) => {
+    button.addEventListener("click", function(e){
+        handleNumber(e.target.textContent);
+    });
+});
