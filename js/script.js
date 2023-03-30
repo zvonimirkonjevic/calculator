@@ -8,7 +8,7 @@ let operationButtons = document.querySelectorAll('#data-operation');
 
 let pastOperationScreen = document.querySelector('#pastOperationScreen');
 
-let currentOperationScreen = document.querySelector('#currentOpreationScreen');
+let currentOperationScreen = document.querySelector('#currentOperationScreen');
 
 function add(a, b){
     return a + b;
@@ -33,7 +33,7 @@ function operate(leftOperand, rightOperand, operator){
     if(operator === '×'){ return multiply(leftOperand, rightOperand);}
 }
 
-function handleNumbers(digit){
-    if(rightOperand.length <= 9){ leftOperand += digit;}
-    currentOperationScreen.textContent = leftOperand;
+function handleNumber(digit){
+    if(rightOperand.length <= 7){ rightOperand += digit;}
+    currentOperationScreen.textContent = rightOperand;
 }
