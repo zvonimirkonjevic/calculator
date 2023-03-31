@@ -50,3 +50,9 @@ numberButtons.forEach((button, index) => {
         handleNumber(e.target.textContent);
     });
 });
+
+operationButtons.forEach((button, index) => {
+    button.addEventListener("click", function(e) {
+        handleOperator(e.target.textContent);
+    });
+});
