@@ -47,6 +47,12 @@ function handleOperator(op){
     rightOperand = "";
 }
 
+function handleEquals(){
+    pastOperationScreen.textContent += " " + rightOperand;
+    currentOperationScreen.textContent = "";
+    currentOperationScreen.textContent = operate(leftOperand, rightOperand, operator);
+}
+
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
         handleNumber(e.target.textContent);
