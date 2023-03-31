@@ -39,6 +39,14 @@ function operate(leftOperand, rightOperand, operator){
     if(operator === '×'){ return multiply(leftOperand, rightOperand);}
 }
 
+function clear(){
+    leftOperand = "";
+    rightOperand = "";
+    operator = "";
+    currentOperationScreen.textContent = "";
+    pastOperationScreen.textContent = "";
+}
+
 function handleNumber(digit){
     if(rightOperand.length <= 7){ rightOperand += digit;}
     currentOperationScreen.textContent = rightOperand;
@@ -75,8 +83,5 @@ equalsButton.addEventListener("click", function(e) {
 });
 
 clearButton.addEventListener("click", function(e) {
-    leftOperand = "";
-    rightOperand = "";
-    currentOperationScreen.textContent = "";
-    pastOperationScreen.textContent = "";
+    clear();
 });
