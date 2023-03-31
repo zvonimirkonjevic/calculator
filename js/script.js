@@ -73,3 +73,10 @@ operationButtons.forEach((button, index) => {
 equalsButton.addEventListener("click", function(e) {
     handleEquals();
 });
+
+clearButton.addEventListener("click", function(e) {
+    leftOperand = "";
+    rightOperand = "";
+    currentOperationScreen.textContent = "";
+    pastOperationScreen.textContent = "";
+});
