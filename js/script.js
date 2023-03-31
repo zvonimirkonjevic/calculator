@@ -38,6 +38,13 @@ function handleNumber(digit){
     currentOperationScreen.textContent = rightOperand;
 }
 
+function handleOperator(op){
+    operator = op;
+    leftOperand = rightOperand;
+    pastOperationScreen.textContent = leftOperand + " " + operator;
+    rightOperand = "";
+}
+
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
         handleNumber(e.target.textContent);
