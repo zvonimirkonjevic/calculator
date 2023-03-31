@@ -12,6 +12,8 @@ let currentOperationScreen = document.querySelector('#currentOperationScreen');
 
 let equalsButton = document.querySelector('#equalsBtn');
 
+let clearButton = document.querySelector('#clearBtn');
+
 function add(a, b){
     return a + b;
 }
