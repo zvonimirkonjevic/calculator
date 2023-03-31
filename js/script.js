@@ -10,6 +10,8 @@ let pastOperationScreen = document.querySelector('#pastOperationScreen');
 
 let currentOperationScreen = document.querySelector('#currentOperationScreen');
 
+let equalsButton = document.querySelector('#equalsBtn');
+
 function add(a, b){
     return a + b;
 }
