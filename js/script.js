@@ -52,7 +52,8 @@ function handleOperator(op){
 function handleEquals(){
     pastOperationScreen.textContent += " " + rightOperand;
     currentOperationScreen.textContent = "";
-    currentOperationScreen.textContent = operate(leftOperand, rightOperand, operator);
+    rightOperand = operate(leftOperand, rightOperand, operator);
+    currentOperationScreen.textContent = rightOperand;
 }
 
 numberButtons.forEach((button, index) => {
