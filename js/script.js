@@ -64,3 +64,7 @@ operationButtons.forEach((button, index) => {
         handleOperator(e.target.textContent);
     });
 });
+
+equalsButton.addEventListener("click", function(e) {
+    handleEquals();
+});
