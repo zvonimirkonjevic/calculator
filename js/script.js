@@ -29,6 +29,8 @@ function divide(a, b){
 }
 
 function operate(leftOperand, rightOperand, operator){
+    leftOperand = parseInt(leftOperand);
+    rightOperand = parseInt(rightOperand);
     if(operator === '+'){ return add(leftOperand, rightOperand);}
     if(operator === '-'){ return subtract(leftOperand, rightOperand);}
     if(operator === '÷'){ return divide(leftOperand, rightOperand);}
