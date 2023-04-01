@@ -49,6 +49,16 @@ function clear(){
     pastOperationScreen.textContent = "";
 }
 
+function negate(){
+    if(rightOperand.charAt(0) === '-'){
+        rightOperand = rightOperand.slice(1);
+    }
+    else{
+        rightOperand = "-" + rightOperand;
+    }
+    currentOperationScreen.textContent = rightOperand;
+}
+
 function handleNumber(digit){
     if(rightOperand.length <= 7){ rightOperand += digit;}
     currentOperationScreen.textContent = rightOperand;
