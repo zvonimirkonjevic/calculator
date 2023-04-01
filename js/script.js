@@ -97,3 +97,7 @@ equalsButton.addEventListener("click", function(e) {
 clearButton.addEventListener("click", function(e) {
     clear();
 });
+
+negateButton.addEventListener("click", function(e){
+    negate();
+});
