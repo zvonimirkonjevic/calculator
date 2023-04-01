@@ -62,7 +62,7 @@ function handleOperator(op){
 function handleEquals(){
     pastOperationScreen.textContent += " " + rightOperand;
     currentOperationScreen.textContent = "";
-    rightOperand = operate(leftOperand, rightOperand, operator);
+    rightOperand = operate(leftOperand, rightOperand, operator).toString();
     currentOperationScreen.textContent = rightOperand;
 }
 
