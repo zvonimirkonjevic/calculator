@@ -14,6 +14,8 @@ let equalsButton = document.querySelector('#equalsBtn');
 
 let clearButton = document.querySelector('#clearBtn');
 
+let negateButton = document.querySelector('#negateBtn');
+
 function add(a, b){
     return a + b;
 }
