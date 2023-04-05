@@ -90,14 +90,14 @@ operationButtons.forEach((button, index) => {
     });
 });
 
-equalsButton.addEventListener("click", function(e) {
+equalsButton.addEventListener("click", () => {
     handleEquals();
 });
 
-clearButton.addEventListener("click", function(e) {
+clearButton.addEventListener("click", () => {
     clear();
 });
 
-negateButton.addEventListener("click", function(e){
+negateButton.addEventListener("click", () =>{
     negate();
 });
