@@ -6,9 +6,9 @@ let numberButtons = document.querySelectorAll('#data-number');
 
 let operationButtons = document.querySelectorAll('#data-operation');
 
-let pastOperationScreen = document.querySelector('#pastOperationScreen');
+let pastScreen = document.querySelector('#pastOperationScreen');
 
-let currentOperationScreen = document.querySelector('#currentOperationScreen');
+let currentScreen = document.querySelector('#currentOperationScreen');
 
 let equalsButton = document.querySelector('#equalsBtn');
 
@@ -45,8 +45,8 @@ function clear(){
     leftOperand = "";
     rightOperand = "";
     operator = "";
-    currentOperationScreen.textContent = "";
-    pastOperationScreen.textContent = "";
+    currentScreen.textContent = "";
+    pastScreen.textContent = "";
 }
 
 function negate(){
@@ -56,26 +56,26 @@ function negate(){
     else{
         rightOperand = "-" + rightOperand;
     }
-    currentOperationScreen.textContent = rightOperand;
+    currentScreen.textContent = rightOperand;
 }
 
 function handleNumber(digit){
     if(rightOperand.length <= 7){ rightOperand += digit;}
-    currentOperationScreen.textContent = rightOperand;
+    currentScreen.textContent = rightOperand;
 }
 
 function handleOperator(op){
     operator = op;
     leftOperand = rightOperand;
-    pastOperationScreen.textContent = leftOperand + " " + operator;
+    pastScreen.textContent = leftOperand + " " + operator;
     rightOperand = "";
 }
 
 function handleEquals(){
-    pastOperationScreen.textContent += " " + rightOperand;
-    currentOperationScreen.textContent = "";
+    pastScreen.textContent += " " + rightOperand;
+    currentScreen.textContent = "";
     rightOperand = operate(leftOperand, rightOperand, operator).toString();
-    currentOperationScreen.textContent = rightOperand;
+    currentScreen.textContent = rightOperand;
 }
 
 numberButtons.forEach((button, index) => {
