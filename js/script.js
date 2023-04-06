@@ -109,5 +109,5 @@ clearButton.addEventListener("click", () => {
 });
 
 negateButton.addEventListener("click", () =>{
-    negate();
+    if(rightOperand !== "") { negate(); }
 });
