@@ -70,12 +70,21 @@ function handleNumber(numberDigit){
     currentScreen.textContent = rightOperand;
 }
 
-function handleOperator(op){
-    operator = op;
-    leftOperand = rightOperand;
-    pastScreen.textContent = leftOperand + " " + operator;
-    rightOperand = "";
+function handleOperator(operatorSymbol){
+    if(operator !== "" && leftOperand != "" && rightOperand != "" && operator !== "="){
+        rightOperand = operate(leftOperand, rightOperand, operator);
+        currentScreen.textContent = rightOperand;
+    }
+    operator = operatorSymbol;
+    if(rightOperand !== ""){
+        leftOperand = rightOperand;
+        rightOperand = "";
+    }
+    if(leftOperand!==""){
+        pastScreen.textContent = leftOperand + " " + operator;
+    }
 }
+
 
 function handleEquals(){
     pastScreen.textContent += " " + rightOperand;
