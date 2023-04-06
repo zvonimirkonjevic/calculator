@@ -59,8 +59,14 @@ function negate(){
     currentScreen.textContent = rightOperand;
 }
 
-function handleNumber(digit){
-    if(rightOperand.length <= 7){ rightOperand += digit;}
+function handleNumber(numberDigit){
+    if(rightOperand.length <= 7){ rightOperand += numberDigit;}
+    if(operator == "="){
+        operator = "";
+        rightOperand = "";
+        rightOperand += numberDigit;
+        pastScreen.textContent = "";
+    }
     currentScreen.textContent = rightOperand;
 }
 
