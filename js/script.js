@@ -3,17 +3,11 @@ let leftOperand = "";
 let rightOperand = "";
 
 let numberButtons = document.querySelectorAll('#data-number');
-
 let operationButtons = document.querySelectorAll('#data-operation');
-
 let pastScreen = document.querySelector('#pastOperationScreen');
-
 let currentScreen = document.querySelector('#currentOperationScreen');
-
 let equalsButton = document.querySelector('#equalsBtn');
-
 let clearButton = document.querySelector('#clearBtn');
-
 let negateButton = document.querySelector('#negateBtn');
 
 function add(a, b){
@@ -85,12 +79,13 @@ function handleOperator(operatorSymbol){
     }
 }
 
-
 function handleEquals(){
-    pastScreen.textContent += " " + rightOperand;
-    currentScreen.textContent = "";
-    rightOperand = operate(leftOperand, rightOperand, operator).toString();
-    currentScreen.textContent = rightOperand;
+    if(operator !== "="){
+        pastScreen.textContent += " " + rightOperand;
+        rightOperand = operate(leftOperand, rightOperand, operator).toString();
+        currentScreen.textContent = rightOperand;
+        operator = "=";
+    }
 }
 
 numberButtons.forEach((button, index) => {
