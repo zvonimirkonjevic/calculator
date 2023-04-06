@@ -101,7 +101,7 @@ operationButtons.forEach((button, index) => {
 });
 
 equalsButton.addEventListener("click", () => {
-    handleEquals();
+    if(leftOperand !== "" && rightOperand !== ""){ handleEquals(); }
 });
 
 clearButton.addEventListener("click", () => {
