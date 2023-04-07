@@ -88,6 +88,11 @@ function handleOperator(operatorSymbol){
 }
 
 function handleEquals(){
+    if(rightOperand.charAt(0) === "-" && operator === "-"){
+        rightOperand = rightOperand.slice(1);
+        operator = "+";
+        pastScreen.textContent = pastScreen.textContent.replace("-", "+");
+    }
     if(operator !== "="){
         pastScreen.textContent += " " + rightOperand;
         rightOperand = operate(leftOperand, rightOperand, operator).toString();
