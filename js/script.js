@@ -90,6 +90,14 @@ function handleEquals(){
     }
 }
 
+function appendPoint(){
+    if(rightOperand !== "" && isDecimal === false){
+        rightOperand += ".";
+        currentScreen.textContent = rightOperand;
+        isDecimal = true;
+    }
+}
+
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
         handleNumber(e.target.textContent);
