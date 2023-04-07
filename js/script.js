@@ -91,6 +91,7 @@ function handleEquals(){
     if(operator !== "="){
         pastScreen.textContent += " " + rightOperand;
         rightOperand = operate(leftOperand, rightOperand, operator).toString();
+        if(rightOperand.length > 8){ rightOperand = rightOperand.slice(0,8);} 
         currentScreen.textContent = rightOperand;
         operator = "=";
     }
