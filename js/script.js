@@ -1,6 +1,7 @@
 let operator = "";
 let leftOperand = "";
 let rightOperand = "";
+let isDecimal = false;
 
 let numberButtons = document.querySelectorAll('#data-number');
 let operationButtons = document.querySelectorAll('#data-operation');
@@ -9,6 +10,7 @@ let currentScreen = document.querySelector('#currentOperationScreen');
 let equalsButton = document.querySelector('#equalsBtn');
 let clearButton = document.querySelector('#clearBtn');
 let negateButton = document.querySelector('#negateBtn');
+let pointButton = document.querySelector('#pointBtn');
 
 function add(a, b){
     return a + b;
