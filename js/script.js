@@ -110,6 +110,11 @@ function appendPoint(){
     }
 }
 
+function handleBackspace(id){
+    currentScreen.textContent = currentScreen.textContent.slice(0,currentScreen.textContent.length-1);
+    rightOperand = currentScreen.textContent;
+}
+
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
         handleNumber(e.target.textContent);
@@ -136,4 +141,8 @@ negateButton.addEventListener("click", () =>{
 
 pointButton.addEventListener("click", () => {
     appendPoint();
+});
+
+window.addEventListener("keydown",function(e) {
+    if(e.key === "Backspace"){ handleBackspace(e.key); }
 });
