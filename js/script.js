@@ -29,8 +29,8 @@ function divide(a, b){
 }
 
 function operate(leftOperand, rightOperand, operator){
-    leftOperand = parseInt(leftOperand);
-    rightOperand = parseInt(rightOperand);
+    leftOperand = Number(leftOperand);
+    rightOperand = Number(rightOperand);
     if(operator === '+'){ return add(leftOperand, rightOperand);}
     if(operator === '-'){ return subtract(leftOperand, rightOperand);}
     if(operator === '÷'){ return divide(leftOperand, rightOperand);}
@@ -43,6 +43,7 @@ function clear(){
     operator = "";
     currentScreen.textContent = "";
     pastScreen.textContent = "";
+    isDecimal = false;
 }
 
 function negate(){
@@ -75,6 +76,11 @@ function handleOperator(operatorSymbol){
     if(rightOperand !== ""){
         leftOperand = rightOperand;
         rightOperand = "";
+        isDecimal = false;
+    }
+    if(leftOperand.slice(leftOperand.length-1) === "."){
+        leftOperand += "0";
+        currentScreen.textContent += "0";
     }
     if(leftOperand!==""){
         pastScreen.textContent = leftOperand + " " + operator;
@@ -120,4 +126,8 @@ clearButton.addEventListener("click", () => {
 
 negateButton.addEventListener("click", () =>{
     if(rightOperand !== "") { negate(); }
+});
+
+pointButton.addEventListener("click", () => {
+    appendPoint();
 });
