@@ -272,3 +272,22 @@ window.addEventListener("keydown", function(e){
         HandleNumber(e.key);
     }
 });
+
+window.addEventListener("keydown", function(e){
+    if(e.key === "*")
+    {
+        HandleOperator("×");
+    }
+    if(e.key === "/")
+    {
+        HandleOperator("÷");
+    }
+    if(e.key === "+")
+    {
+        HandleOperator("+");
+    }
+    if(e.key === "-")
+    {
+        HandleOperator("-");
+    }
+});
