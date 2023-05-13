@@ -54,16 +54,6 @@ function clear(){
     isDecimal = false;
 }
 
-function negate(){
-    if(rightOperand.charAt(0) === '-'){
-        rightOperand = rightOperand.slice(1);
-    }
-    else{
-        rightOperand = "-" + rightOperand;
-    }
-    currentScreen.textContent = rightOperand;
-}
-
 function HandleNumber(numberDigit)
 {
     if(IsLengthInRange(rightOperand))
@@ -107,6 +97,19 @@ function HandleEquals()
         SetScreenValue(currentScreen, rightOperand);
         SetOperatorValue("=");
     }
+}
+
+function Negate()
+{
+    if(rightOperand.charAt(0) === '-')
+    {
+        SetRightOperandValue(rightOperand.slice(1));
+    }
+    else
+    {
+        SetRightOperandValue("-" + rightOperand);
+    }
+    SetScreenValue(currentScreen, rightOperand);
 }
 
 function AppendDecimalPoint()
