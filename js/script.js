@@ -45,15 +45,6 @@ function Operate(leftOperand, rightOperand, operator)
     }
 }
 
-function clear(){
-    leftOperand = "";
-    rightOperand = "";
-    operator = "";
-    currentScreen.textContent = "";
-    pastScreen.textContent = "";
-    isDecimal = false;
-}
-
 function HandleNumber(numberDigit)
 {
     if(IsLengthInRange(rightOperand))
@@ -120,6 +111,12 @@ function AppendDecimalPoint()
         SetScreenValue(currentScreen, rightOperand);
         decimalMode = true;
     }
+}
+
+function HandleBackspace()
+{
+    SetScreenValue(currentScreen, currentScreen.textContent.slice(0, currentScreen.textContent.length-1));
+    SetRightOperandValue(currentScreen.textContent);
 }
 
 function HandleInputAfterEquals(numberDigit)
