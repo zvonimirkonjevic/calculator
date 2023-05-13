@@ -263,3 +263,12 @@ window.addEventListener("keydown",function(e) {
         HandleBackspace(); 
     }
 });
+
+// KEYBOARD_INPUT_SUPPORT
+
+window.addEventListener("keydown", function(e){
+    if(IsNumber(e.key))
+    {
+        HandleNumber(e.key);
+    }
+});
