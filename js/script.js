@@ -119,6 +119,16 @@ function HandleBackspace()
     SetRightOperandValue(currentScreen.textContent);
 }
 
+function Clear()
+{
+    SetLeftOperandValue("");
+    SetRightOperandValue("");
+    SetOperatorValue("");
+    SetScreenValue(pastScreen, "");
+    SetScreenValue(currentScreen, "");
+    decimalMode = false;
+}
+
 function HandleInputAfterEquals(numberDigit)
 {
     if(operator === "=")
@@ -210,11 +220,6 @@ function IsLengthInRange(variable)
 function IsNumber(key)
 {
     return key == '' || !isNaN(key - 0);
-}
-
-function handleBackspace(id){
-    currentScreen.textContent = currentScreen.textContent.slice(0,currentScreen.textContent.length-1);
-    rightOperand = currentScreen.textContent;
 }
 
 numberButtons.forEach((button, index) => {
