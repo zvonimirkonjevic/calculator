@@ -10,7 +10,8 @@ let operationButtons = document.querySelectorAll('#data-operation');
 let pastScreen = document.querySelector('#pastOperationScreen');
 let currentScreen = document.querySelector('#currentOperationScreen');
 let equalsButton = document.querySelector('#equalsBtn');
-let clearButton = document.querySelector('#clearBtn');
+let clearAllButton = document.querySelector('#clearAllBtn');
+let clearLastInputButton = document.querySelector('#clearLastInputBtn');
 let negateButton = document.querySelector('#negateBtn');
 let pointButton = document.querySelector('#pointBtn');
 
@@ -113,13 +114,13 @@ function AppendDecimalPoint()
     }
 }
 
-function HandleBackspace()
+function ClearLastInput()
 {
     SetScreenValue(currentScreen, currentScreen.textContent.slice(0, currentScreen.textContent.length-1));
     SetRightOperandValue(currentScreen.textContent);
 }
 
-function Clear()
+function ClearAll()
 {
     SetLeftOperandValue("");
     SetRightOperandValue("");
@@ -223,6 +224,7 @@ function IsNumber(key)
 }
 
 // EVENT_LISTENERS
+
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
         HandleNumber(e.target.textContent);
@@ -242,8 +244,12 @@ equalsButton.addEventListener("click", () => {
     }
 });
 
-clearButton.addEventListener("click", () => {
-    Clear();
+clearAllButton.addEventListener("click", () => {
+    ClearAll();
+});
+
+clearLastInputButton.addEventListener("click", () => {
+    ClearLastInput();
 });
 
 negateButton.addEventListener("click", () =>{
@@ -260,7 +266,7 @@ pointButton.addEventListener("click", () => {
 window.addEventListener("keydown",function(e) {
     if(e.key === "Backspace")
     {
-        HandleBackspace(); 
+        ClearLastInput(); 
     }
 });
 
