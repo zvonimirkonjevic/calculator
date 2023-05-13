@@ -222,34 +222,44 @@ function IsNumber(key)
     return key == '' || !isNaN(key - 0);
 }
 
+// EVENT_LISTENERS
 numberButtons.forEach((button, index) => {
     button.addEventListener("click", function(e){
-        handleNumber(e.target.textContent);
+        HandleNumber(e.target.textContent);
     });
 });
 
 operationButtons.forEach((button, index) => {
     button.addEventListener("click", function(e) {
-        handleOperator(e.target.textContent);
+        HandleOperator(e.target.textContent);
     });
 });
 
 equalsButton.addEventListener("click", () => {
-    if(leftOperand !== "" && rightOperand !== ""){ handleEquals(); }
+    if(leftOperand !== "" && rightOperand !== "")
+    { 
+        HandleEquals(); 
+    }
 });
 
 clearButton.addEventListener("click", () => {
-    clear();
+    Clear();
 });
 
 negateButton.addEventListener("click", () =>{
-    if(rightOperand !== "") { negate(); }
+    if(rightOperand !== "") 
+    {
+        Negate(); 
+    }
 });
 
 pointButton.addEventListener("click", () => {
-    appendPoint();
+    AppendDecimalPoint();
 });
 
 window.addEventListener("keydown",function(e) {
-    if(e.key === "Backspace"){ handleBackspace(e.key); }
+    if(e.key === "Backspace")
+    {
+        HandleBackspace(); 
+    }
 });
