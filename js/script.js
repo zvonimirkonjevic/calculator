@@ -14,6 +14,9 @@ let clearButton = document.querySelector('#clearBtn');
 let negateButton = document.querySelector('#negateBtn');
 let pointButton = document.querySelector('#pointBtn');
 
+currentScreen.textContent = "";
+pastScreen.textContent = "";
+
 function add(a, b){
     return a + b;
 }
