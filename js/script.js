@@ -74,23 +74,20 @@ function HandleNumber(numberDigit)
     SetScreenValue(currentScreen, rightOperand);
 }
 
-function handleOperator(operatorSymbol){
-    if(operator !== "" && leftOperand != "" && rightOperand != "" && operator !== "="){
-        rightOperand = operate(leftOperand, rightOperand, operator);
-        currentScreen.textContent = rightOperand;
+function HandleOperator(operatorSymbol)
+{
+    HandleOperatorAfterOperator();
+    SetOperatorValue(operatorSymbol);
+    if(rightOperand !== "")
+    {
+        SetLeftOperandValue(rightOperand);
+        SetRightOperandValue("");
+        decimalMode = false;
     }
-    operator = operatorSymbol;
-    if(rightOperand !== ""){
-        leftOperand = rightOperand;
-        rightOperand = "";
-        isDecimal = false;
-    }
-    if(leftOperand.slice(leftOperand.length-1) === "."){
-        leftOperand += "0";
-        currentScreen.textContent += "0";
-    }
-    if(leftOperand!==""){
-        pastScreen.textContent = leftOperand + " " + operator;
+    HandleEmptyFractional();
+    if(leftOperand !== "")
+    {
+        SetScreenValue(pastScreen, leftOperand + " " + operator);
     }
 }
 
@@ -125,6 +122,31 @@ function HandleInputAfterEquals(numberDigit)
         SetRightOperandValue("");
         AppendValueToRightOperand(numberDigit);
         SetScreenValue(pastScreen, "");
+    }
+}
+
+function HandleOperatorAfterOperator()
+{
+    if(operator !== "" && leftOperand != "" && rightOperand != "" && operator !== "=")
+    {
+        SetScreenValue(pastScreen, "");
+        SetScreenValue(pastScreen, leftOperand + " " + operator + " " + rightOperand);
+        SetRightOperandValue(Operate(leftOperand, rightOperand, operator).toString());
+        SetScreenValue(currentScreen, rightOperand);
+    }
+}
+
+
+function HandleEmptyFractional()
+{
+    if(rightOperand.slice(rightOperand.length-1) === ".")
+    {
+        AppendValueToRightOperand("0");
+    }
+    if(leftOperand.slice(leftOperand.length-1) === ".")
+    {
+        AppendValueToLeftOperand("0");
+        AppendValueToScreen(currentScreen, "0");
     }
 }
 
