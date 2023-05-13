@@ -109,11 +109,13 @@ function HandleEquals()
     }
 }
 
-function appendPoint(){
-    if(rightOperand !== "" && isDecimal === false){
-        rightOperand += ".";
-        currentScreen.textContent = rightOperand;
-        isDecimal = true;
+function AppendDecimalPoint()
+{
+    if(rightOperand !== "" && decimalMode === false)
+    {
+        AppendValueToRightOperand(".");
+        SetScreenValue(currentScreen, rightOperand);
+        decimalMode = true;
     }
 }
 
