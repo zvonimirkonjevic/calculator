@@ -91,18 +91,21 @@ function HandleOperator(operatorSymbol)
     }
 }
 
-function handleEquals(){
-    if(rightOperand.charAt(0) === "-" && operator === "-"){
-        rightOperand = rightOperand.slice(1);
-        operator = "+";
-        pastScreen.textContent = pastScreen.textContent.replace("-", "+");
-    }
-    if(operator !== "="){
-        pastScreen.textContent += " " + rightOperand;
-        rightOperand = operate(leftOperand, rightOperand, operator).toString();
-        if(rightOperand.length > 8){ rightOperand = rightOperand.slice(0,8);} 
-        currentScreen.textContent = rightOperand;
-        operator = "=";
+function HandleEquals()
+{
+    HandleDoubleNegation();
+    HandleEmptyFractional();
+    if(operator !== "=")
+    {
+        SetScreenValue(pastScreen, "");
+        SetScreenValue(pastScreen, leftOperand + " " + operator + " " + rightOperand);
+        SetRightOperandValue(Operate(leftOperand, rightOperand, operator).toString());
+        if(!IsLengthInRange(rightOperand))
+        {
+            SetRightOperandValue(rightOperand.slice(0, 8));
+        }
+        SetScreenValue(currentScreen, rightOperand);
+        SetOperatorValue("=");
     }
 }
 
@@ -147,6 +150,16 @@ function HandleEmptyFractional()
     {
         AppendValueToLeftOperand("0");
         AppendValueToScreen(currentScreen, "0");
+    }
+}
+
+function HandleDoubleNegation()
+{
+    if(rightOperand.charAt(0) === "-" && operator === "-")
+    {
+        SetRightOperandValue(rightOperand.slice(1));
+        SetOperatorValue("+");
+        SetScreenValue(pastScreen,pastScreen.textContent.replace("-", "+"));
     }
 }
 
