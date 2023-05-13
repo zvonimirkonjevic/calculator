@@ -64,15 +64,14 @@ function negate(){
     currentScreen.textContent = rightOperand;
 }
 
-function handleNumber(numberDigit){
-    if(rightOperand.length <= 7){ rightOperand += numberDigit;}
-    if(operator == "="){
-        operator = "";
-        rightOperand = "";
-        rightOperand += numberDigit;
-        pastScreen.textContent = "";
+function HandleNumber(numberDigit)
+{
+    if(IsLengthInRange(rightOperand))
+    {
+        AppendValueToRightOperand(numberDigit);
     }
-    currentScreen.textContent = rightOperand;
+    HandleInputAfterEquals(numberDigit);
+    SetScreenValue(currentScreen, rightOperand);
 }
 
 function handleOperator(operatorSymbol){
@@ -115,6 +114,17 @@ function appendPoint(){
         rightOperand += ".";
         currentScreen.textContent = rightOperand;
         isDecimal = true;
+    }
+}
+
+function HandleInputAfterEquals(numberDigit)
+{
+    if(operator === "=")
+    {
+        SetOperatorValue("");
+        SetRightOperandValue("");
+        AppendValueToRightOperand(numberDigit);
+        SetScreenValue(pastScreen, "");
     }
 }
 
