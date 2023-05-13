@@ -118,6 +118,53 @@ function appendPoint(){
     }
 }
 
+// HELPER_FUNCTIONS
+
+function SetOperatorValue(value)
+{
+    operator = value;
+}
+
+function SetLeftOperandValue(value)
+{
+    leftOperand = value;
+}
+
+function AppendValueToLeftOperand(value)
+{
+    leftOperand += value;
+}
+
+function AppendValueToRightOperand(digit)
+{
+    rightOperand += digit;
+}
+
+function SetRightOperandValue(value)
+{
+    rightOperand = value;
+}
+
+function SetScreenValue(screen, text)
+{
+    screen.textContent = text;
+}
+
+function AppendValueToScreen(screen,value)
+{
+    screen.textContent += value;
+}
+
+function IsLengthInRange(variable)
+{
+    return variable.length <= MAX_DIGITS;
+}
+
+function IsNumber(key)
+{
+    return key == '' || !isNaN(key - 0);
+}
+
 function handleBackspace(id){
     currentScreen.textContent = currentScreen.textContent.slice(0,currentScreen.textContent.length-1);
     rightOperand = currentScreen.textContent;
