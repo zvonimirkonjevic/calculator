@@ -1,7 +1,9 @@
-let operator = "";
+const MAX_DIGITS = 7;
+
 let leftOperand = "";
 let rightOperand = "";
-let isDecimal = false;
+let operator = "";
+let decimalMode = false;
 
 let numberButtons = document.querySelectorAll('#data-number');
 let operationButtons = document.querySelectorAll('#data-operation');
