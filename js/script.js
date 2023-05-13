@@ -17,29 +17,32 @@ let pointButton = document.querySelector('#pointBtn');
 currentScreen.textContent = "";
 pastScreen.textContent = "";
 
-function add(a, b){
-    return a + b;
-}
+// MAIN_FUNCTIONS
 
-function subtract(a, b){
-    return a - b;
-}
+function Add(a, b){return a + b;}
 
-function multiply(a, b){
-    return a * b;
-}
+function Subtract(a, b){return a - b;}
 
-function divide(a, b){
-    return a / b;
-}
+function Multiply(a, b){return a * b;}
 
-function operate(leftOperand, rightOperand, operator){
+function Divide(a, b){return a / b;}
+
+function Operate(leftOperand, rightOperand, operator)
+{
     leftOperand = Number(leftOperand);
     rightOperand = Number(rightOperand);
-    if(operator === '+'){ return add(leftOperand, rightOperand);}
-    if(operator === '-'){ return subtract(leftOperand, rightOperand);}
-    if(operator === '÷'){ return divide(leftOperand, rightOperand);}
-    if(operator === '×'){ return multiply(leftOperand, rightOperand);}
+    switch(operator){
+        case "+":
+            return Add(leftOperand, rightOperand);
+        case "-":
+            return Subtract(leftOperand, rightOperand);
+        case "×":
+            return Multiply(leftOperand, rightOperand);
+        case "÷":
+            return Divide(leftOperand, rightOperand);
+        default:
+            break;        
+    }
 }
 
 function clear(){
