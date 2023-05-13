@@ -291,3 +291,10 @@ window.addEventListener("keydown", function(e){
         HandleOperator("-");
     }
 });
+
+window.addEventListener("keydown", function(e) {
+    if(e.key === "=")
+    {
+        HandleEquals();
+    }
+});
